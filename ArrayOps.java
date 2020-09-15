@@ -20,6 +20,10 @@ public class ArrayOps {
         for(int i=0;i<a.length;i++)
             a[i]=sc.nextInt();
     }
+    void display(){
+        for(int element:a)
+            System.out.print(element+" ");
+    }
     void sort(){
         for(int i=0;i<a.length;i++){
             int j=i-1;
