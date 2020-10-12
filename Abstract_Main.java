@@ -8,13 +8,10 @@
  *
  * @author hrupa
  */
-public class Cuboid_Main {
+public class Abstract_Main {
     public static void main(String args[]){
-        Cuboid ob=new Cuboid();
-        ob.input();
-        //ob.calcArea();
-        ob.calcVol();
-        //ob.displayArea();
-        ob.displayVol();
+        AbstractClass ob=new ChildClass_Abstract();
+        ob.display();
+        ob.printStatus();
     }
 }
