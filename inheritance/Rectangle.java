@@ -8,6 +8,7 @@
  *
  * @author hrupa
  */
+package inheritance;
 import java.util.Scanner;
 public class Rectangle {
     int l,b,area;

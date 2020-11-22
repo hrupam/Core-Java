@@ -8,9 +8,10 @@
  *
  * @author hrupa
  */
-public class ChildClass_Abstract extends AbstractClass {
-    @Override
-    public void display(){
-        System.out.println("display() is defined in sub-class");
+package thisKeyword;
+public class ThisParam_Main {
+    public static void main(String args[]){
+        ThisParam obj=new ThisParam();
+        obj.get();
     }
 }

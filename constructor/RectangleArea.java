@@ -8,10 +8,14 @@
  *
  * @author hrupa
  */
-public class Abstract_Main {
-    public static void main(String args[]){
-        AbstractClass ob=new ChildClass_Abstract();
-        ob.display();
-        ob.printStatus();
+package constructor;
+public class RectangleArea {
+    int l,b;
+    public RectangleArea(int l, int b){
+        this.l=l;
+        this.b=b;
+    }
+    int area(){
+        return l*b;
     }
 }

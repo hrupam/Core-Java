@@ -8,9 +8,11 @@
  *
  * @author hrupa
  */
-public class ThisParam_Main {
+package abstractClass;
+public class Abstract_Main {
     public static void main(String args[]){
-        ThisParam obj=new ThisParam();
-        obj.get();
+        AbstractClass ob=new ChildClass_Abstract();
+        ob.display();
+        ob.printStatus();
     }
 }

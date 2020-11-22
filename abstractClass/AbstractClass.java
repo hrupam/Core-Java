@@ -8,8 +8,10 @@
  *
  * @author hrupa
  */
-public class ThisArgument_Main {
-    public static void main(String args[]){
-        A ob=new A();
+package abstractClass;
+public abstract class AbstractClass {
+    public abstract void display();
+    public void printStatus(){
+        System.out.print("This is Abstract Class");
     }
 }

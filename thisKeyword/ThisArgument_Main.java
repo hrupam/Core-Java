@@ -8,8 +8,9 @@
  *
  * @author hrupa
  */
-public class A_ParentClass {
-    void display(){
-        System.out.println("Java");
+package thisKeyword;
+public class ThisArgument_Main {
+    public static void main(String args[]){
+        A ob=new A();
     }
 }

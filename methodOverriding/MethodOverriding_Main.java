@@ -8,6 +8,7 @@
  *
  * @author hrupa
  */
+package methodOverriding;
 public class MethodOverriding_Main {
     public static void main(String args[]){
         MethodOverriding ob=new MethodOverriding();

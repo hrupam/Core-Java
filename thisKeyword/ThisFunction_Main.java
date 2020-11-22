@@ -8,9 +8,14 @@
  *
  * @author hrupa
  */
-public class ThisInvoke_Main {
+package thisKeyword;
+import java.util.Scanner;
+public class ThisFunction_Main {
     public static void main(String args[]){
-        ThisInvoke ob=new ThisInvoke();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number:");
+        int c=sc.nextInt();
+        ThisFunction ob=new ThisFunction(c);
         ob.display();
     }
 }

@@ -8,13 +8,10 @@
  *
  * @author hrupa
  */
-
-//Using this to invoke current class method
-public class ThisInvoke {
-    void show(){
-        System.out.print("Hello World");
-    }
-    void display(){
-        this.show();
+package thisKeyword;
+public class ThisInvoke_Main {
+    public static void main(String args[]){
+        ThisInvoke ob=new ThisInvoke();
+        ob.display();
     }
 }

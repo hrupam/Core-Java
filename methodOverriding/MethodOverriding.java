@@ -8,16 +8,9 @@
  *
  * @author hrupa
  */
-public class ThisFunction {
-    int a,b,c;
-    public ThisFunction(){
-        a=b=c=0;
-    }
-    public ThisFunction(int c){
-        this();
-        this.c=c;
-    }
+package methodOverriding;
+public class MethodOverriding extends A_ParentClass {
     void display(){
-        System.out.print("a="+a+"\nb="+b+"\nc="+c);
+        System.out.println("Python");
     }
 }

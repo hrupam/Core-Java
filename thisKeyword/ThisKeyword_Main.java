@@ -8,16 +8,15 @@
  *
  * @author hrupa
  */
+package thisKeyword;
 import java.util.Scanner;
-public class RectangleArea_main {
+class ThisKeyword_Main{
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter length: ");
-        int l=sc.nextInt();
-        System.out.println("Enter breadth: ");
+        System.out.println("Enter two numbers:");
+        int a=sc.nextInt();
         int b=sc.nextInt();
-        RectangleArea ob=new RectangleArea(l,b);
-        int rectArea=ob.area();
-        System.out.println("Area is "+rectArea);
+        ThisKeyword ob=new ThisKeyword(a,b);
+        ob.display();
     }
 }

@@ -8,6 +8,7 @@
  *
  * @author hrupa
  */
+package inheritance;
 import java.util.Scanner;
 public class Cuboid extends Rectangle {
     int h,vol;

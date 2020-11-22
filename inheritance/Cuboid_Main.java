@@ -8,14 +8,14 @@
  *
  * @author hrupa
  */
-import java.util.Scanner;
-class ThisKeyword_Main{
+package inheritance;
+public class Cuboid_Main {
     public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter two numbers:");
-        int a=sc.nextInt();
-        int b=sc.nextInt();
-        ThisKeyword ob=new ThisKeyword(a,b);
-        ob.display();
+        Cuboid ob=new Cuboid();
+        ob.input();
+        //ob.calcArea();
+        ob.calcVol();
+        //ob.displayArea();
+        ob.displayVol();
     }
 }

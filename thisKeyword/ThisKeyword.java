@@ -8,8 +8,14 @@
  *
  * @author hrupa
  */
-public class MethodOverriding extends A_ParentClass {
+package thisKeyword;
+public class ThisKeyword {
+    int a,b;
+    public ThisKeyword(int a, int b){
+        this.a=a;
+        this.b=b;
+    }
     void display(){
-        System.out.println("Python");
+        System.out.print("a="+a+"\nb="+b);
     }
 }

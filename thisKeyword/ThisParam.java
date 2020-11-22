@@ -10,6 +10,7 @@
  */
 
 //Using this as method parameter
+package thisKeyword;
 public class ThisParam {
     int a,b;
     public ThisParam(){

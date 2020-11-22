@@ -8,13 +8,10 @@
  *
  * @author hrupa
  */
-public class RectangleArea {
-    int l,b;
-    public RectangleArea(int l, int b){
-        this.l=l;
-        this.b=b;
-    }
-    int area(){
-        return l*b;
+package thisKeyword;
+public class ThisReturn_Main {
+    public static void main(String args[]){
+        ThisReturn obj=new ThisReturn();
+        obj.get().display();
     }
 }

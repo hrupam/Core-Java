@@ -8,14 +8,17 @@
  *
  * @author hrupa
  */
-import java.util.Scanner;
-public class ThisKeyword {
-    int a,b;
-    public ThisKeyword(int a, int b){
-        this.a=a;
-        this.b=b;
+package thisKeyword;
+public class ThisFunction {
+    int a,b,c;
+    public ThisFunction(){
+        a=b=c=0;
+    }
+    public ThisFunction(int c){
+        this();
+        this.c=c;
     }
     void display(){
-        System.out.print("a="+a+"\nb="+b);
+        System.out.print("a="+a+"\nb="+b+"\nc="+c);
     }
 }

@@ -8,13 +8,9 @@
  *
  * @author hrupa
  */
-public class Cuboid_Main {
+package mypack;
+public class NewClass {
     public static void main(String args[]){
-        Cuboid ob=new Cuboid();
-        ob.input();
-        //ob.calcArea();
-        ob.calcVol();
-        //ob.displayArea();
-        ob.displayVol();
+        System.out.println("Welcome to package");
     }
 }

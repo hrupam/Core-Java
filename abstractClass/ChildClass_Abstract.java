@@ -8,9 +8,10 @@
  *
  * @author hrupa
  */
-public class ThisReturn_Main {
-    public static void main(String args[]){
-        ThisReturn obj=new ThisReturn();
-        obj.get().display();
+package abstractClass;
+public class ChildClass_Abstract extends AbstractClass {
+    @Override
+    public void display(){
+        System.out.println("display() is defined in sub-class");
     }
 }

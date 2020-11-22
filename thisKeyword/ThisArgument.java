@@ -10,6 +10,7 @@
  */
 
 //Using this as an argument in the constructor call
+package thisKeyword;
 public class ThisArgument {
     A obj;
     public ThisArgument(A obj){

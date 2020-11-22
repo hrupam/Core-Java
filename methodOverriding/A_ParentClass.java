@@ -8,9 +8,9 @@
  *
  * @author hrupa
  */
-public abstract class AbstractClass {
-    public abstract void display();
-    public void printStatus(){
-        System.out.print("This is Abstract Class");
+package methodOverriding;
+public class A_ParentClass {
+    void display(){
+        System.out.println("Java");
     }
 }
