@@ -12,19 +12,19 @@ import java.util.Scanner;
  * @author hrupa
  */
 class Generator {
-
+    
     int n;
     int fibArray[];
     int primeArray[];
     int fibctr = 0;
     int primectr = 0;
-
+    
     public Generator(int n) {
         this.n = n;
         this.primeArray = new int[n];
         this.fibArray = new int[n];
     }
-
+    
     void fiboGenerator() {
         int a = 0;
         int b = 1;
@@ -40,12 +40,12 @@ class Generator {
                 b = c;
             }
         }
-
+        
     }
-
+    
     void primeGenerator() {
         int num = 0;
-
+        
         for (int i = 0; i < n;) {
             int ctr = 0;
             for (int j = 1; j <= num; j++) {
@@ -53,28 +53,28 @@ class Generator {
                     ctr++;
                 }
             }
-
+            
             if (ctr == 2) {
                 this.primeArray[i] = num;
                 i++;
             }
             num += 1;
-
+            
         }
-
+        
     }
-
+    
     int getFibo() {
         return fibArray[fibctr++];
     }
-
+    
     int getPrime() {
         return primeArray[primectr++];
     }
 }
 
 public class FiboPrimeSeries {
-
+    
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter range: ");
@@ -89,9 +89,10 @@ public class FiboPrimeSeries {
             } else {
                 System.out.print(g.getFibo());
             }
-            if(i!=n)
+            if (i != n) {
                 System.out.print(", ");
+            }
         }
-
+        
     }
 }
