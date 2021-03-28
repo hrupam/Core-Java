@@ -8,14 +8,14 @@
  *
  * @author hrupa
  */
-interface A {
+interface C {
 
     void show(int x);
 }
 
 public class LambdaExp {
 
-    static void f1(A ob) {
+    static void f1(C ob) {
         ob.show(5);
     }
 
@@ -23,7 +23,7 @@ public class LambdaExp {
 //        A ob = x -> System.out.print(x);
 //        ob.show(5);
 //        f1(x -> System.out.println(x));
-        f1(new A() {
+        f1(new C() {
             @Override
             public void show(int x) {
                 System.out.println(x);
