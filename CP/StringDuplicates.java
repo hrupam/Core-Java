@@ -61,13 +61,24 @@ public class StringDuplicates {
             return false;
         }
 
-        Set<Character> set = new LinkedHashSet<>();
+        Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < a.length(); i++) {
-            set.add(a.charAt(i));
+            char c = a.charAt(i);
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
+            } else {
+                map.put(c, 1);
+            }
         }
 
         for (int i = 0; i < b.length(); i++) {
-            if (!set.contains(b.charAt(i))) {
+            char c = b.charAt(i);
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) - 1);
+                if (map.get(c) < 0) {
+                    return false;
+                }
+            } else {
                 return false;
             }
         }
@@ -104,6 +115,6 @@ public class StringDuplicates {
 
         System.out.println(removeDuplicates(s));
 
-        System.out.println(isAnagram("anagram", "marganaa"));
+        System.out.println(isAnagram("dormitory", "dirtyroom"));
     }
 }
