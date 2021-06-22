@@ -8,7 +8,6 @@ package CP;
 import java.util.*;
 
 /**
- *
  * @author rupam
  */
 public class StringDuplicates {
@@ -48,7 +47,7 @@ public class StringDuplicates {
             set.add(s.charAt(i));
         }
 
-        for (Iterator<Character> i = set.iterator(); i.hasNext();) {
+        for (Iterator<Character> i = set.iterator(); i.hasNext(); ) {
             str += i.next();
         }
 
@@ -64,11 +63,7 @@ public class StringDuplicates {
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < a.length(); i++) {
             char c = a.charAt(i);
-            if (map.containsKey(c)) {
-                map.put(c, map.get(c) + 1);
-            } else {
-                map.put(c, 1);
-            }
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
         for (int i = 0; i < b.length(); i++) {
