@@ -5,10 +5,9 @@
  */
 package tcsCoding;
 
-import java.util.*;
+import java.util.Scanner;
 
 /**
- *
  * @author rupam
  */
 public class OddlyEven {
@@ -20,7 +19,7 @@ public class OddlyEven {
         int oddSum = 0;
         for (int i = 0; i < s.length(); i++) {
             String c = String.valueOf(s.charAt(i));
-            if ((i + 1) % 2 == 0) {
+            if (((i + 1) & 1) == 0) {
                 evenSum += Integer.parseInt(c);
 
             } else {
