@@ -22,7 +22,7 @@ class RemoveDuplicates {
             for (int j = i - 1; j >= 0; j--) {
                 if (nums[i] == nums[j]) {
                     flag = true;
-//                    break inner;
+                    break inner;
                 }
             }
             if (!flag)
