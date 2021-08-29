@@ -16,4 +16,10 @@ public class BinaryTree {
 
         return root;
     }
+
+    public static Node getUnbalancedTree() {
+        Node node3 = new Node(3, new Node(5, new Node(7), new Node(6)), new Node(4));
+        Node node1 = new Node(1, node3, new Node(2));
+        return node1;
+    }
 }
