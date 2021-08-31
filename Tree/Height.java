@@ -8,7 +8,7 @@ public class Height {
         return 1 + Math.max(lh, rh);
     }
 
-    public static boolean checkBalanced(Node root) {
+    public static boolean isBalanced(Node root) {
         class Check {
             int check(Node node) {
                 if (node == null) return 0;
@@ -25,6 +25,6 @@ public class Height {
 
     public static void main(String[] args) {
         System.out.println("Height = " + height(BinaryTree.getTree()));
-        System.out.println("Balanced ? " + checkBalanced(BinaryTree.getUnbalancedTree()));
+        System.out.println("Balanced ? " + isBalanced(BinaryTree.getUnbalancedTree()));
     }
 }
