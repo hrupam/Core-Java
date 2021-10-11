@@ -5,8 +5,6 @@
  */
 package javadocDemo;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
  * @author Rupam Hari
  * Class for Circle
@@ -61,7 +59,7 @@ public class Circle implements Comparable<Circle> {
     }
 
     @Override
-    public int compareTo(@NotNull Circle o) {
+    public int compareTo(Circle o) {
         return (int) Math.round(this.area() - o.area());
     }
 
