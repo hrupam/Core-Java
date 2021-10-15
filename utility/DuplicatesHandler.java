@@ -9,7 +9,7 @@ package utility;
  *
  * @author rupam
  */
-public class Utility {
+public class DuplicatesHandler {
 
     public static int[] removeDuplicates(int[] A) {
         int k = 0;
