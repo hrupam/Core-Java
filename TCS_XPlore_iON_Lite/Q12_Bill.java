@@ -45,6 +45,7 @@ public class Q12_Bill {
 
     }
 
+    
     public static Bill[] findBillWithMaxBillAmountBasedOnStatus(Bill[] bills, boolean status) {
 //method logic
         List<Bill> list = Arrays.asList(bills);
@@ -54,20 +55,29 @@ public class Q12_Bill {
             else if (a.billAmount > b.billAmount) return 1;
             return 0;
         };
-        
-        double maxBillAmount = Collections.max(list, billAmountComparator).billAmount;
+
+        List<Bill> filteredBillsBasedOnStatus = new LinkedList<>();
+        for (Bill b : list) {
+            if (b.status == status)
+                filteredBillsBasedOnStatus.add(b);
+        }
+
+        if (filteredBillsBasedOnStatus.isEmpty()) return null;
+
+        double maxBillAmount = Collections.max(filteredBillsBasedOnStatus, billAmountComparator).billAmount;
 
         List<Bill> filteredBills = new LinkedList<>();
-        for (Bill b : list) {
-            if (b.billAmount == maxBillAmount && b.status == status)
+        for (Bill b : filteredBillsBasedOnStatus) {
+            if (b.billAmount == maxBillAmount)
                 filteredBills.add(b);
         }
-        if (filteredBills.size() == 0) return null;
+        if (filteredBills.isEmpty()) return null;
 
         Collections.sort(filteredBills, Comparator.comparingInt(a -> a.billNo));
         return filteredBills.toArray(new Bill[filteredBills.size()]);
 
     }
+
 
     public static int getCountWithTypeOfConnection(Bill[] bills, String connectionType) {
 //method logic
