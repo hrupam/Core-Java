@@ -18,7 +18,7 @@ public class ThreeSum {
             for (int j = i + 1; j < nums.length; j++) {
                 int target = sum - nums[j];
                 if (map.containsKey(target))
-                    wrappedSet.add(List.of(nums[i], nums[j], target));
+                    wrappedSet.add(List.of(nums[i], target, nums[j]));
                 else {
                     map.put(nums[j], j);
                 }
