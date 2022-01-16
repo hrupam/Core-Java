@@ -6,12 +6,14 @@ import java.util.List;
 
 public class Combination {
     public static void main(String[] args) {
+        //combination
         int[] arr = {1, 2, 3};
         int r = 2;
         List<List<Integer>> list = new LinkedList<>();
         combination(arr, 0, r, new ArrayList<>(), list);
         System.out.println(list);
 
+        //count subsequence sum
         System.out.println(countSubsequenceSumK(arr, 0, 3, 0));
     }
 
