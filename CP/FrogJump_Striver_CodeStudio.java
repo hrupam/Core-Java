@@ -11,6 +11,8 @@ public class FrogJump_Striver_CodeStudio {
         int[] dp = new int[arr.length + 1];
         Arrays.fill(dp, -1);
         System.out.println(solve(arr, arr.length - 1, dp));
+
+        System.out.println(solve(arr, 0, 4, 0));
     }
 
     //Recursive approach
@@ -22,6 +24,22 @@ public class FrogJump_Striver_CodeStudio {
         if (index + 2 < arr.length)
             r = solve(arr, index + 2, energy + Math.abs(arr[index + 2] - arr[index]));
         return Math.min(l, r);
+    }
+
+    //Recurisve approach with K jumps
+    private static int solve(int[] arr, int index, int k, int energy) {
+        if (index == arr.length - 1)
+            return energy;
+
+        int minimum = Integer.MAX_VALUE;
+        for (int i = 1; i <= k; i++) {
+
+            if (index + i < arr.length) {
+                int l = solve(arr, index + i, k, energy + Math.abs(arr[index] - arr[index + i]));
+                minimum = Math.min(minimum, l);
+            }
+        }
+        return minimum;
     }
 
     //Reverse recursion approach
