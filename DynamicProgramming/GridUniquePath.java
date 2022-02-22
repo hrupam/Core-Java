@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class GridUniquePath {
     public static void main(String[] args) {
-        int m = 3;
+        int m = 4;
         int n = 4;
         System.out.println(uniquePaths(m, n));
     }
@@ -39,9 +39,10 @@ public class GridUniquePath {
     private static int f(int i, int j, int dp[][]) {
         if (i == j && j == 0) return 1;
         if (i < 0 || j < 0) return 0;
+        if (dp[i][j] != -1) return dp[i][j];
 
         int up = f(i - 1, j, dp);
         int left = f(i, j - 1, dp);
-        return up + left;
+        return dp[i][j] = up + left;
     }
 }
