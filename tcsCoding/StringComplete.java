@@ -6,9 +6,10 @@ import java.util.List;
 public class StringComplete {
 
     public static void main(String[] args) {
-        String s = "butl";
+        String s = "bifl";
         String target = "beautiful";
-        System.out.println(canComplete(s, target));
+//        System.out.println(canComplete(s, target));
+        System.out.println(canComplete2(s, target, 0, ""));
     }
 
     private static boolean canComplete(String s, String target) {
@@ -26,6 +27,18 @@ public class StringComplete {
 
         if (list.size() == str.length && isSorted(list))
             return true;
+        return false;
+    }
+
+    private static boolean canComplete2(String s, String target, int i, String str) {
+        if (i == target.length()) {
+            if (str.equals(s)) return true;
+            return false;
+        }
+
+        if (canComplete2(s, target, i + 1, str + target.charAt(i))) return true;
+        if (canComplete2(s, target, i + 1, str)) return true;
+
         return false;
     }
 
