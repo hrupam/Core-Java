@@ -1,15 +1,24 @@
 package tcsCoding;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class StringComplete {
 
     public static void main(String[] args) {
-        String s = "bifl";
+        String s = "butfl";
         String target = "beautiful";
 //        System.out.println(canComplete(s, target));
-        System.out.println(canComplete2(s, target, 0, ""));
+//        System.out.println(canComplete2(s, target, 0, ""));
+
+        //DP approach
+        int[][] dp = new int[s.length()][target.length()];
+        for (int[] x : dp) Arrays.fill(x, -1);
+
+        int n = canCompleteDP(s, target, s.length() - 1, target.length() - 1, dp);
+        if (n == s.length()) System.out.println(true);
+        else System.out.println(false);
     }
 
     private static boolean canComplete(String s, String target) {
@@ -40,6 +49,18 @@ public class StringComplete {
         if (canComplete2(s, target, i + 1, str)) return true;
 
         return false;
+    }
+
+    private static int canCompleteDP(String s1, String s2, int i, int j, int[][] dp) {
+        if (i < 0 || j < 0) return 0;
+        if (dp[i][j] != -1) return dp[i][j];
+
+        //match
+        if (s1.charAt(i) == s2.charAt(j)) return dp[i][j] = 1 + canCompleteDP(s1, s2, i - 1, j - 1, dp);
+
+        //not match
+        return dp[i][j] = Math.max(canCompleteDP(s1, s2, i - 1, j, dp), canCompleteDP(s1, s2, i, j - 1, dp));
+
     }
 
     private static boolean isSorted(List<Integer> list) {
