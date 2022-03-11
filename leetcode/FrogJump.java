@@ -4,27 +4,39 @@ import java.util.Arrays;
 
 public class FrogJump {
     public static void main(String[] args) {
-        int[] stones = {0, 1, 3, 5, 6, 8, 12, 17};
+        int[] stones = {0, 2};
         System.out.println(new FrogJump().canCross(stones));
     }
 
-    private static boolean solve(int[] stones, int index, int jump) {
-        if (index == stones.length - 1) return true;
+    private static int f(int i, int jump, int[] a, int n, int[][] dp) {
+        if (i == n - 1)
+            return 1;
+        if (dp[i][jump] != -1)
+            return dp[i][jump];
 
-        int[] dev = {jump - 1, jump, jump + 1};
-        for (int x : dev) {
-            if (x > 0) {
-                int pos = Arrays.binarySearch(stones, stones[index] + x);
-                if (pos >= 0) {
-                    if (solve(stones, pos, x)) return true;
-
-                }
+        int[] d = {jump - 1, jump, jump + 1};
+        for (int di : d) {
+            if (di > 0) {
+                int pos = Arrays.binarySearch(a, i + 1, n, a[i] + di);
+                if (pos >= 0)
+                    if (f(pos, di, a, n, dp) == 1)
+                        return dp[i][jump] = 1;
             }
+
         }
-        return false;
+        return dp[i][jump] = 0;
+
     }
 
     public boolean canCross(int[] stones) {
-        return solve(stones, 0, 0);
+        int n = stones.length;
+        int[][] dp = new int[n][n];
+        for (int[] x : dp)
+            Arrays.fill(x, -1);
+        int flag = f(0, 0, stones, n, dp);
+        if (flag == 1)
+            return true;
+        return false;
+
     }
 }
