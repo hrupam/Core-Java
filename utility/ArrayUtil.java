@@ -20,4 +20,12 @@ public class ArrayUtil {
 
         return wrappedList;
     }
+
+    public static void printMatrix(int[][] a) {
+        for (int[] x : a) {
+            for (int y : x) System.out.print(y + "\t");
+            System.out.println();
+        }
+
+    }
 }
