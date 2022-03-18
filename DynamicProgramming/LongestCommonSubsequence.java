@@ -3,6 +3,11 @@ package DynamicProgramming;
 import java.util.Arrays;
 
 public class LongestCommonSubsequence {
+    public static void main(String[] args) {
+        String s = "abcd";
+        String t = "aedf";
+        System.out.println(lcs(s, t));
+    }
 
     public static int lcs(String s, String t) {
         //Your code goes here
@@ -22,4 +27,6 @@ public class LongestCommonSubsequence {
         return dp[i][j] = Math.max(f(s1, s2, i - 1, j, dp), f(s1, s2, i, j - 1, dp));
 
     }
+
+
 }
