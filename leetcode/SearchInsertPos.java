@@ -18,7 +18,6 @@ public class SearchInsertPos {
     }
 
     public static int searchInsert(int[] nums, int target) {
-        int index = -1;
         int low = 0;
         int high = nums.length - 1;
         while (low <= high) {
@@ -31,6 +30,6 @@ public class SearchInsertPos {
                 high = mid - 1;
             }
         }
-        return low > high ? low : high;
+        return Math.max(low, high);
     }
 }
