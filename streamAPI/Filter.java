@@ -5,11 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-enum Gender {
-    MALE,
-    FEMALE,
-    OTHERS
-}
 
 public class Filter {
     public static void main(String[] args) {
@@ -36,19 +31,3 @@ public class Filter {
     }
 }
 
-class Person {
-    private static int idCtr = 0;
-    int id;
-    String name;
-    int age;
-    Gender gender;
-
-    public Person(String name, int age, Gender gender) {
-        this.id = ++idCtr;
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-    }
-
-
-}
